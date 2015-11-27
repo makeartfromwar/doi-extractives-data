@@ -8,10 +8,10 @@ permalink: /explore/all-lands-production/
 
   <h3> <a href="{{ site.baseurl }}/explore/">Explore Data</a> / All Lands Production</h3>
   
-  <h4>2013 production on all U.S. lands</h4>
+  <p>In 2013, total energy production from oil, gas, mining, and renewables reached <a href="http://www.eia.gov/totalenergy/data/monthly/pdf/sec1_3.pdf">73.67 quadrillion British thermal units</a> (Btus).</p>
   
-  <p>Production totals for natural resources in the 2015 USEITI Report and their estimated financial values are listed in the table below:</p>
-  
+  <p><em>Production on all U.S. lands and waters in 2013 is listed below.</em></p>
+      
   <table>
 	  <tr>
 		  <th>Resource</th>
@@ -54,9 +54,9 @@ permalink: /explore/all-lands-production/
 		  <td>Not available</td>
 	  </tr>
   </table>
+    
+  <p>Over the past decade, the U.S. has invested heavily in clean energy initiatives, and renewable energy production has increased substantially. In 2013, wind power produced the <a href="http://www.eia.gov/forecasts/steo/report/renew_co2.cfm">largest amount of renewable energy</a> (1.6 quadrillion Btu) compared with solar (0.3 quadrillion Btu) and geothermal (0.2 quadrillion Btu) sources.</p>
   
   <p><img src="chart p. 69" /></p>
   
-  <p>In 2013, total energy production from oil, gas, mining, and renewables reached <a href="http://www.eia.gov/totalenergy/data/monthly/pdf/sec1_3.pdf">73.67 quadrillion British thermal units</a> (Btus). Over the past decade, the U.S. has invested heavily in clean energy initiatives, and renewable energy production has increased substantially. In 2013, wind power produced the <a href="http://www.eia.gov/forecasts/steo/report/renew_co2.cfm">largest amount of renewable energy</a> (1.6 quadrillion Btu) compared with solar (0.3 quadrillion Btu) and geothermal (0.2 quadrillion Btu) sources.</p>
-
 </div>
