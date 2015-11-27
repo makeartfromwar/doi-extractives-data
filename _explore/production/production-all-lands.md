@@ -8,7 +8,7 @@ permalink: /explore/all-lands-production/
 
   <h3> <a href="{{ site.baseurl }}/explore/">Explore Data</a> / All Lands Production</h3>
   
-  <p>In 2013, total energy production from oil, gas, mining, and renewables reached <a href="http://www.eia.gov/totalenergy/data/monthly/pdf/sec1_3.pdf">73.67 quadrillion British thermal units</a> (Btus).</p>
+  <p>Total energy production from oil, gas, mining, and renewables reached <a href="http://www.eia.gov/totalenergy/data/monthly/pdf/sec1_3.pdf">73.67 quadrillion British thermal units</a> (Btus).</p>
   
   <p><em>Production on all U.S. lands and waters in 2013 is listed below.</em></p>
       
@@ -24,7 +24,7 @@ permalink: /explore/all-lands-production/
 	      <td>~$295 billion</td>	  	
 	  </tr>
 	  <tr>
-		  <td>Gas (marketed production)</td>
+		  <td>Gas</td>
 		  <td>25,690,878 million cubic feet</td>
 		  <td>~$98.2 billion</td>
 	  </tr>
@@ -44,7 +44,7 @@ permalink: /explore/all-lands-production/
 		  <td>~$10.2 billion</td>
 	  </tr>
 	  <tr>
-		  <td>Iron ore</td>
+		  <td>Iron</td>
 		  <td>53 million metric tons</td>
 		  <td>~$5 billion</td>
 	  </tr>
