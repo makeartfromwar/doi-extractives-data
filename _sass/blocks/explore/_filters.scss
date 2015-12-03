@@ -71,6 +71,7 @@
   width: 50%;
 
   &:hover,
+  &:focus,
   &.active {
     background: $dark-blue;
     color: $white;

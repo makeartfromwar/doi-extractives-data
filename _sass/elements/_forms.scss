@@ -76,7 +76,8 @@ select[multiple=multiple] {
   padding: 0.6em 0.8em;
   width: 100%;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: $form-border-color-hover;
   }
 
