@@ -22,8 +22,12 @@
         }},
 
         attachedCallback: {value: function() {
-          [].forEach.call(this.attributes, function(attr) {
-            attributeChanged.call(this, attr.name, null, attr.value);
+          var self = this;
+          // apply all attributes on the next frame
+          requestAnimationFrame(function() {
+            [].forEach.call(self.attributes, function(attr) {
+              attributeChanged.call(self, attr.name, null, attr.value);
+            });
           });
         }},
 
