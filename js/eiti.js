@@ -6,6 +6,36 @@
    */
   var eiti = exports.eiti = {};
 
+  eiti.enqueue = (function() {
+    var tasks = [];
+    var queued = false;
+
+    var dequeue = function() {
+      var start = Date.now();
+      var end = start + 100; // ms
+      // console.info('dequeue() %d tasks', tasks.length);
+      while (tasks.length) {
+        var task = tasks.shift();
+        task();
+        if (Date.now() > end) break;
+      }
+      if (tasks.length) {
+        // console.warn('dequeue took too long; %d tasks remaining', tasks.length);
+        requestAnimationFrame(dequeue);
+      } else {
+        queued = false;
+      }
+    };
+
+    return function enqueue(task) {
+      tasks.push(task);
+      if (!queued) {
+        queued = true;
+        return requestAnimationFrame(dequeue);
+      }
+    }
+  })();
+
   /**
    * Load a URL by inferring its data type based on the extension (.csv, .tsv,
    * or .json) and cache responses for repeated calls.
