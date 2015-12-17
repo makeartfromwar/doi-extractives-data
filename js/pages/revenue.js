@@ -326,9 +326,9 @@
       });
 
     selection.select('eiti-bar')
-      .attr('min', min)
-      .attr('max', max)
-      .attr('value', getter('value'));
+      .property('min', min)
+      .property('max', max)
+      .property('value', getter('value'));
   }
 
   function createScale(values) {
