@@ -3,16 +3,6 @@
   var renderId = '__render_id';
   var EPSILON = .5;
 
-  var attributeChanged = function(attr, prev, value) {
-    switch (attr) {
-      case 'value':
-      case 'min':
-      case 'max':
-        this[attr] = value;
-        break;
-    }
-  };
-
   exports.EITIBar = document.registerElement('eiti-bar', {
     prototype: Object.create(
       HTMLElement.prototype,
@@ -26,12 +16,11 @@
           // apply all attributes on the next frame
           requestAnimationFrame(function() {
             [].forEach.call(self.attributes, function(attr) {
-              attributeChanged.call(self, attr.name, null, attr.value);
-            });
+              this['__' + attr.name] = attr.value;
+            }, self);
+            self.render();
           });
         }},
-
-        attributeChangedCallback: {value: attributeChanged},
 
         min: numericProperty('min', 0),
         max: numericProperty('max', 1),
@@ -52,11 +41,9 @@
     return bar;
   }
 
-  function render(force) {
-    if (force) {
-      _render.call(this);
-    } else if (!this[renderId]) {
-      this[renderId] = requestAnimationFrame(_render.bind(this));
+  function render() {
+    if (!this[renderId]) {
+      this[renderId] = eiti.enqueue(_render.bind(this));
     }
   }
 
@@ -98,9 +85,6 @@
 
   function genericProperty(name, value, parse, change) {
     var symbol = '__' + name;
-    if (!parse) {
-      parse = identity;
-    }
     return {
       get: function() {
         return (symbol in this) ? this[symbol] : value;
@@ -120,16 +104,7 @@
   }
 
   function numericProperty(name, value, parse, change) {
-    if (change) {
-      var _change = change;
-      change = function() {
-        _change.apply(this, arguments);
-        render.apply(this, arguments);
-      };
-    } else {
-      change = render;
-    }
-    return genericProperty(name, value, parseNumber, change);
+    return genericProperty(name, value, parseNumber, change || render);
   }
 
   function parseNumber(n) {
@@ -140,10 +115,6 @@
     return (typeof value === 'string')
       ? value === 'true'
       : !!value;
-  }
-
-  function identity(d) {
-    return d;
   }
 
 })(this);
