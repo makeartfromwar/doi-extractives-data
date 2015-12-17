@@ -88,6 +88,7 @@
     }
 
     model.load(state, function(error, data) {
+
       if (error) {
         console.error('error:', error);
         data = [];
@@ -209,6 +210,14 @@
         return d.types.length > 1 ? formatNumber(d.total) : '';
       });
 
+    /*
+    // XXX this is actually the right way to do it,
+    // but this takes WAAAAAYYYY too long in IE
+    var extent = d3.extent(companies.reduce(function(list, d) {
+      return list.concat(d3.extent(d.types, getter('value')));
+    }, []));
+    */
+
     var extent = d3.extent(companies, getter('total'));
     items.call(renderSubtypes, getter('types'), extent);
   }
@@ -267,6 +276,7 @@
       .attr('class', 'name');
     selection.append('td')
       .attr('class', 'value');
+
     selection.append('td')
       .attr('class', 'bar')
       .append(function() {
@@ -285,12 +295,12 @@
       });
 
     var bar = selection.select('eiti-bar')
-      .attr('value', getter('value'));
+      .property('value', getter('value'));
 
     if (extent) {
       bar
-        .attr('min', Math.min(0, extent[0]))
-        .attr('max', extent[1]);
+        .property('min', Math.min(0, extent[0]))
+        .property('max', extent[1]);
     }
   }
 
