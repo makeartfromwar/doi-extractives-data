@@ -6,7 +6,7 @@ permalink: /how-it-works/
 
 <section class="slab-delta">
   <div class="container-outer landing-section_top">
-    <div class="container-left-8 hero-left">
+    <div class="container-left-8 hero">
       <h1>{{ page.title }}</h1>
       <p class="hero-description">In the U.S., land and the resources beneath it can be owned by private individuals and corporations or by federal, state, local, and tribal governments. This makes the U.S. different from nearly every other country; in many places oil, gas, coal, and other minerals simply belong to the government, but in the U.S. there is widespread private ownership of these resources.</p>
       <p class="hero-description">Learn what the <a href="#process">extraction process</a> looks like, how <a href="#natural-resources">natural resources</a> are managed, and what <a href="#laws-governance">laws and governance</a> relate to the industry.</p>

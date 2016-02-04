@@ -32,6 +32,10 @@ header,
   margin-left: $base-padding;
   margin-right: $base-padding;
 
+  @include respond-to(medium-up) {
+    margin-bottom: ( $base-padding-large * 5 / 3 );
+  }
+
   @include respond-to(huge-plus-up) {
     @include outer-container($max-width);
   }

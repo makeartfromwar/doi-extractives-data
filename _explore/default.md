@@ -6,7 +6,7 @@ permalink: /explore/
 
 <section class="slab-delta">
   <div class="container-outer landing-section_top">
-	  <div class="container-left-8 hero-left">
+	  <div class="container-left-8 hero">
 			<h1>{{ page.title }}</h1>
 			<p class="hero-description">Interacting with the data helps shed light on where natural resources in the U.S. are extracted, how they contribute to national revenues, and how they affect state and local economies.</p>
       <p class="hero-description">We have information from government sources on <a href="#revenue">revenue</a>, <a href="#production">production</a>, and <a href="#economic-impact">economic impact</a>. Several datasets are new in 2015, including <a href="{{ site.baseurl }}/explore/federal-production/">federal production</a> and <a href="{{ site.baseurl }}/explore/federal-revenue-by-company/">federal revenue by company</a> information.</p>
