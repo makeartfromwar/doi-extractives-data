@@ -2,31 +2,35 @@
 
 <section id="employment" class="economic employment">
   <h2>Employment</h2>
+  <section class="county-map-table container">
+    <p>One measure of the role of extractive industries is how many people are employed in jobs related to natural resource extraction. In {{ state_name }}, in {{ year }},
+      {% if jobs[year].count %}
+        there were
+        {{ jobs[year].count | intcomma }}
+        jobs in the extractive industries, which represented
+        {{ jobs[year].percent | percent }}% of state-wide employment.
+      {% else %}
+        there were no jobs in the extractive industries.
+      {% endif %}
+    </p>
 
-  <p>One measure of the role of extractive industries is how many people are employed in jobs related to natural resource extraction. In {{ state_name }}, in {{ year }},
-    {% if jobs[year].count %}
-      there were
-      {{ jobs[year].count | intcomma }}
-      jobs in the extractive industries, which represented
-      {{ jobs[year].percent | percent }}% of state-wide employment.
-    {% else %}
-      there were no jobs in the extractive industries.
-    {% endif %}
-  </p>
+    {%
+      include location/display-jobs.html
+      values=jobs
+      percent=true
+    %}
 
-  {%
-    include location/display-jobs.html
-    values=jobs
-    percent=true
-  %}
+    {% assign county_jobs = site.data.county_jobs[state_id] %}
+    {% if county_jobs %}
 
-  {% assign county_jobs = site.data.county_jobs[state_id] %}
-  {% if county_jobs %}
-  <h3>County-Level Employment</h3>
-  <p>County-level employment data shows how many jobs in each county (and what percentage of the county's total employment) are related to extractive industries.</p>
+  </section>
 
-  <section class="county-map-table">
-    <figure>
+  <section class="county-map-table container">
+
+    <h3>County-Level Employment</h3>
+    <p>County-level employment data shows how many jobs in each county (and what percentage of the county's total employment) are related to extractive industries.</p>
+
+    <figure class="container-half">
       <data-map color-scheme="Reds" steps="9">
         {% capture value_key %}employment.{{ year }}.count{% endcapture %}
         {%
