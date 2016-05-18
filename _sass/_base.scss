@@ -48,3 +48,21 @@
 //
 // Styleguide blocks
 @import 'blocks/all';
+
+
+// TODO move these, they are just for state prototype testing
+
+.state-prototype {
+  section + section {
+    margin-top: 80px;
+  }
+
+  .prototype-table-container {
+    float: left;
+  }
+
+  .prototype-table {
+    display: inline-block;
+    width: 40%;
+  }
+}

@@ -1,7 +1,7 @@
 {% assign jobs = site.data.state_jobs[include.location_id] %}
 {% assign jobs_count = jobs[include.year].count %}
 {% if jobs_count %}
-  The extractives industry created
+  The extractive industries created
   <a href="#employment">{{ jobs_count | intcomma }} jobs</a>
   on average in {{ include.location_name }} in {{ include.year }},
   or {{ jobs[year].percent | percent }}% of state-wide employment.

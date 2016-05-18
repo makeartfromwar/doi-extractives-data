@@ -11,6 +11,10 @@ table[is=bar-chart-table] {
     background: #fff;
   }
 
+  thead {
+    background: #D2E2CB;
+  }
+
   .numeric,
   [data-value] {
     text-align: left;

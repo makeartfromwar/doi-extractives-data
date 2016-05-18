@@ -9,39 +9,52 @@ layout: default
 {% assign commodity_names = site.data.commodity_names %}
 {% assign top_products = 10 %}
 
-<main id="state-{{ state_id }}" class="container-outer">
-  <h1>{{ state_name }}</h1>
+<main id="state-{{ state_id }}" class="container-outer container-margin layout-content state-prototype">
 
-  {% include location/section-key-facts.html %}
+  <article class="container-left-8">
 
-  {% include location/section-ownership.html %}
+    <div>
+      <a class="breadcrumb" href="#">Regional profiles</a>
+      /
+    </div>
+    <h1>{{ state_name }}</h1>
 
-  {% include location/section-process.html %}
+    {% include location/section-key-facts.html %}
 
-  {% include location/section-revenue.html %}
+    {% include location/section-ownership.html %}
 
-  {% include location/section-all-production.html %}
+    {% include location/section-process.html %}
 
-  {% include location/section-federal-production.html %}
+    {% include location/section-revenue.html %}
 
-  {% include location/section-state-production.html %}
+    {% include location/section-all-production.html %}
 
-  {% include location/section-jobs.html %}
+    {% include location/section-federal-production.html %}
 
-  {% include location/section-gdp.html %}
+    {% include location/section-state-production.html %}
 
-  {% include location/section-exports.html %}
+    {% include location/section-jobs.html %}
 
-  {% include location/section-disbursements.html %}
+    {% include location/section-gdp.html %}
 
-  <!-- XXX setting display: none on this prevents the mask from working -->
-  <svg width="0" height="0">
-    <defs>
-      <clipPath id="state-outline">
-        <use xlink:href="{{ states_svg }}#{{ state_id }}"></use>
-      </clipPath>
-    </defs>
-  </svg>
+    {% include location/section-exports.html %}
+
+    {% include location/section-disbursements.html %}
+
+    <!-- XXX setting display: none on this prevents the mask from working -->
+    <svg width="0" height="0">
+      <defs>
+        <clipPath id="state-outline">
+          <use xlink:href="{{ states_svg }}#{{ state_id }}"></use>
+        </clipPath>
+      </defs>
+    </svg>
+
+  </article>
+
+  <div class="container-right-4">
+    This is where the nav will go.
+  </div>
 
 </main>
 
