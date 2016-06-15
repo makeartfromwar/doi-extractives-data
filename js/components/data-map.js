@@ -102,9 +102,9 @@
           d3.select(this).selectAll('[threshold-start]')
             .text(function (d) {
               console.log(d)
-              return format.commaSeparatedDollars(textScaleStart(d));
+              return format.commaSeparatedDollars(textScaleStart(d)) + ' –';
             });
-          end = d3.select(this).selectAll('[threshold-end]')
+          d3.select(this).selectAll('[threshold-end]')
             .text(function (d) {
               return format.commaSeparatedDollars(textScaleEnd(d));
             });
