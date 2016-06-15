@@ -85,13 +85,13 @@
             .domain(domain)
             .range(domains[1]);
 
-          var legend = d3.select(this)
+          var swatches = d3.select(this)
             .selectAll('dl [data-step]')
             .datum(function() {
               return +this.getAttribute('data-step') * domain[1] || 0;
             });
 
-          legend.style('background-color', scale);
+          swatches.style('background-color', scale);
 
           var threshold = d3.select(this)
               .selectAll('dl [step-threshold]')
@@ -101,7 +101,6 @@
 
           d3.select(this).selectAll('[threshold-start]')
             .text(function (d) {
-              console.log(d)
               return format.commaSeparatedDollars(textScaleStart(d)) + ' –';
             });
           d3.select(this).selectAll('[threshold-end]')
@@ -109,9 +108,20 @@
               return format.commaSeparatedDollars(textScaleEnd(d));
             });
 
+          var container = d3.select(this)
+            .selectAll('.svg-container[data-dimensions]')
+            .datum(function() {
+              return (this.getBoundingClientRect().width
+                * +this.getAttribute('data-dimensions')
+                / 100)
+                + 50;
+            });
 
-          console.log(this, domains[0])
+          function pixelize(d) {
+            return d + 'px';
+          }
 
+          container.style('padding-bottom', pixelize)
 
         }}
       }
