@@ -40,19 +40,22 @@
   </div>
 
   <section class="county-map-table">
-    <figure>
-      <data-map color-scheme="Blues" steps="{{steps}}">
+    <figure class="container">
+      <data-map color-scheme="Blues" steps="{{ steps }}">
         {% assign county_revenue = site.data.county_revenue[state_id] %}
+        {% capture caption %}County extractives revenue (dollars, {{ year }}){% endcapture %}
         {% capture value_key %}revenue.{{ year }}{% endcapture %}
+
         {%
           include county-map.html
           state=state_id
           counties=county_revenue
           value=value_key
           steps=steps
+          inherit_width=true
+          caption=caption
         %}
       </data-map>
-      <figcaption>County extractives revenue (dollars, {{ year }})</figcaption>
     </figure>
 
     <p>At each phase of natural resource extraction, the federal government collects different fees. This chart shows how much federal revenue was collected for each kind of resource during each phase of production.</p>
